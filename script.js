@@ -58,8 +58,9 @@ function showGame() {
 
 function pickLetter() {
   if (gameOver == false && !this.classList.contains("used")) {
-    let letterExists = false;
     this.classList.add("used");
+
+    let letterExists = false;
     for (let i = 0; i < word.length; i++) {
       if (this.innerHTML == word[i]) {
         boxesArray[i].innerHTML = this.innerHTML;
@@ -67,14 +68,17 @@ function pickLetter() {
       }
     }
 
-    //If every letter in the innerHTML of boxesArray is equal to every letter in word array, then say: You Win!
-    //What is boxesArray? An array of elements
-    //What is word? A variable
-    if (boxesArray.innerHTML == word) {
+    let allLettersExist = true;
+    for (let i = 0; i < word.length; i++) {
+      if (boxesArray[i].innerHTML != word[i]) {
+        allLettersExist = false;
+      }
+    }
+
+    if (allLettersExist == true) {
       resultParagraph.innerHTML = "You Win!";
       gameOver = true;
     }
-
     else if (letterExists == false) {
       fails = fails + 1;
       updateImage();
@@ -84,9 +88,9 @@ function pickLetter() {
           if (boxesArray[i].innerHTML == "") {
             boxesArray[i].innerHTML = word[i];
             boxesArray[i].style.color = "red";
-            //QUESTION: Why doesn't the code above make all letters red, even the ones that were already guessed?
           }
         }
+        gameOver = true;
       }
     }
   }
@@ -97,4 +101,3 @@ function updateImage() {
 }
 
 
-// TODO: Make program say "You Win!"
