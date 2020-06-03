@@ -1,0 +1,56 @@
+.square{
+  height: 30px;
+  width: 30px;
+  border: solid;
+  display: inline-block;
+  text-align: center;
+}
+
+.blank {
+  vertical-align: top;
+  display: inline-block;
+  width: 50px;
+  height: 35px;
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+#blankBoxes{
+  display: none;
+}
+
+#squareContainer{
+  display: none;
+}
+
+#imageBox{
+  height: 186px;
+  width: 150px;
+  border: solid;
+  display: none;
+}
+
+#inputBox{
+  display: inline-block;
+}
+
+#randomWordButton{
+  display: inline-block;
+}
+
+#submitButton{
+  display: inline-block;
+}
+
+.used {
+  opacity: 0.25;
+}
+
+.used:hover {
+  background-color: white;
+  cursor: not-allowed;
+}
